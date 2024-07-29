@@ -1,0 +1,27 @@
+version: "3.8"
+
+x-networks:
+    - &networks
+      networks:
+          - common-network
+
+x-configs:
+    - &policy
+      restart: always
+    - &logging
+      logging:
+          driver: "json-file"
+          options:
+              max-file: 5
+              max-size: 10m
+
+services:
+    illodev-app:
+        image: "c4piloky/illodev:latest"
+        ports:
+            - "80:3000"
+        <<: [*logging, *policy, *networks]
+
+networks:
+    common-network:
+        external: true
