@@ -51,7 +51,7 @@ export function GithubSection() {
                         </div>
                         <Link
                             aria-label="GitHub"
-                            href="https://github.com/illodev"
+                            href="https://github.com/illodev/illodev.com"
                             target="_blank"
                             className="absolute inset-0 z-10"
                         />
